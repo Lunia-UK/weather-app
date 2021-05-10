@@ -1,6 +1,6 @@
 <template>
   <div class="relative bg-gray-600 md:w-4/5 h-full">
-    <Now :temperature="info.current.temp"/>
+    <Now v-if="info" :current="info.current"/>
   </div>
 </template>
 
