@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import {defineComponent, onBeforeMount} from 'vue'
-import config from '../config.json'
+const config = import.meta.env.VITE_NYT_API_KEY
 import axios from 'axios'
 import MainContent from './components/MainContent.vue'
 import SideBar from './components/SideBar.vue'
@@ -34,7 +34,7 @@ export default defineComponent({
               lat:51.228236,
               lon:0.544608,
               units:'metric',
-              appid: config.appId
+              appid: config
             }
           });
           this.info = response.data;
