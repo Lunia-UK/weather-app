@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col md:flex-row h-screen">
-    <MainContent :info="info"/>
+      <MainContent v-if="info"  :info="info"/>
     <SideBar/>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, onBeforeMount} from 'vue'
+import {defineComponent} from 'vue'
 const config = import.meta.env.VITE_NYT_API_KEY
 import axios from 'axios'
 import MainContent from './components/MainContent.vue'
