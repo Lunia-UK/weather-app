@@ -22,10 +22,10 @@ export default {
     };
   },
   created() {
-    this.loadCurrentWeather();
+    this.changeBackgroundImage();
   },
   methods: {
-    loadCurrentWeather() {
+    changeBackgroundImage() {
       switch (this.info.current.weather[0].main) {
         case 'Sun':
           this.currentWeather = 'sun';
