@@ -8,8 +8,8 @@
       </div>
     </div>
     <hr>
-    <div class="flex justify-between p-5">
-      <p>{{time}}</p>
+    <div class="flex justify-between p-5 text-white">
+      <p>{{ time }}</p>
       <p class="uppercase">maidstone, gb</p>
     </div>
   </div>
@@ -29,6 +29,7 @@ name: "Now",
   },
   created() {
     this.changeTitle();
+    this.loadTime();
   },
   methods: {
     changeTitle() {
@@ -48,6 +49,19 @@ name: "Now",
         default :
           this.currentWeatherTitle = 'day';
       }
+    },
+    loadTime() {
+      const newDate = new Date();
+      const months = ['January','Febuary','March','April','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const year = newDate.getFullYear();
+      const month = months[newDate.getMonth()];
+      const days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const day = days[newDate.getDay()];
+      const date = newDate.getDate();
+      const hours = newDate.getHours()
+      const minutes = "0" + newDate.getMinutes();
+      const time =  hours + ':' + minutes.substr(-2) + ' - ' + day + ' ' + date + ' ' + month + ' ' + year
+      return this.time = time
     }
   }
 }
