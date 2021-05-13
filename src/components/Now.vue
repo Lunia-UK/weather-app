@@ -1,6 +1,6 @@
 <template>
-  <div class="absolute inset-x-0 bottom-0">
-    <div class="flex flex-col md:flex-row items-center p-2 lg:p-10">
+  <div class="md:w-4/5">
+    <div class="flex flex-col md:flex-row md:justify-content-end-end p-2 lg:p-10">
       <h2 class="xl:text-9xl md:text-7xl text-8xl mr-12 lg:mr24 font-semibold">{{ current.temp }}°C</h2>
       <div class="flex flex-col h-24 lg:h-32 justify-around ">
         <h3 class="text-5xl lg:text-4xl md:text-3xl font-semibold">Today is {{ currentWeatherTitle }} day</h3>
